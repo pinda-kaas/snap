@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="snapApp">
+<html lang="en" ng-app="snapApp" ng-cloak>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -14,13 +14,20 @@
 
         <section id="game-table">
 
-            <div class="card" ng-click="pickCard('cpu')"></div>
+            {{playerTurn}}
+            <!--cpu cards-->
+            <div ng-class="{'turn':playerTurn==1,'noturn':playerTurn==0 }"></div>
 
-            <div class=""></div>
+
+            <!--image of the card goes here-->
+
+            <div class="{'spade':lastPickerCard.suit=='s'}"></div>
+
             {{lastPickedCard.number}}
             {{lastPickedCard.suit}}
 
-            <div ng-class="{'turn':playerTurn }" ng-click="pickCard('player')"></div>
+            <!--player cards-->
+            <div ng-class="{'turn':playerTurn==0,'noturn':playerTurn==1 }" ng-click="pickCard(0)"></div>
 
         </section>
 

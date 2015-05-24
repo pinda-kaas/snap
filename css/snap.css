@@ -11,7 +11,7 @@
   	background-size: 100px auto;
 }
 
-.card
+.noturn
 {
 	width: 100px;
 	height:200px;
@@ -19,7 +19,10 @@
 	background-color: red;
 }
 
-.card .turn
+.turn
 {
+	width: 100px;
+	height:200px;
+	border-radius: 25px;
 	background-color: green;
 }
